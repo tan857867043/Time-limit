@@ -5,34 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Bin 管理器</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>JSON Bin 管理器</h1>
-    <div>
-        <label for="bins">选择一个 Bin：</label>
-        <select id="binsList"></select>
+    <div id="app">
+        <h1>JSON Bin 管理器</h1>
+        <div>
+            <label for="bins">选择一个 Bin：</label>
+            <select id="binsList"></select>
+            <div class="spinner" id="binsSpinner"></div>
+        </div>
+        <div>
+            <h3>JSON 内容</h3>
+            <textarea id="jsonContent" disabled></textarea>
+            <button id="updateBtn" disabled title="点击更新当前选中的 Bin 的内容"><i class="fas fa-save"></i> 更新 Bin</button>
+            <button id="deleteBtn" disabled title="点击删除当前选中的 Bin"><i class="fas fa-trash"></i> 删除 Bin</button>
+            <div class="spinner" id="actionSpinner"></div>
+        </div>
+        <div>
+            <h3>设置 Bin 名称</h3>
+            <input type="text" id="binName" placeholder="输入 Bin 名称" disabled>
+            <button id="setNameBtn" disabled title="点击设置当前选中的 Bin 的名称"><i class="fas fa-edit"></i> 设置名称</button>
+        </div>
+        <div>
+            <h3>新建 Bin</h3>
+            <textarea id="newBinContent" placeholder="输入 JSON 数据"></textarea>
+            <input type="text" id="newBinName" placeholder="输入新 Bin 名称">
+            <button id="createBinBtn">新建 Bin</button>
+        </div>
+        <div id="log">
+            <h3>日志</h3>
+            <pre id="logContent"></pre>
+        </div>
     </div>
-    <div>
-        <h3>JSON 内容</h3>
-        <textarea id="jsonContent" disabled></textarea>
-        <button id="updateBtn" disabled>更新 Bin</button>
-        <button id="deleteBtn" disabled>删除 Bin</button>
-    </div>
-    <div>
-        <h3>设置 Bin 名称</h3>
-        <input type="text" id="binName" placeholder="输入 Bin 名称" disabled>
-        <button id="setNameBtn" disabled>设置名称</button>
-    </div>
-    <div>
-        <button id="newBinWindowBtn">新建 Bin</button>
-    </div>
-    <div id="log">
-        <h3>日志</h3>
-        <pre id="logContent"></pre>
-    </div>
-    <script src="main.js"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
