@@ -1,25 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 2em;
 }
 
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #binsList {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 textarea {
-    width: 100%;
+    padding: 0.5em;
     height: 200px;
 }
 
 input[type="text"] {
-    width: 100%;
-    margin-top: 1em;
+    padding: 0.5em;
+    margin-top: 1.2em;
 }
 
 button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
     margin-top: 1em;
     margin-right: 1em;
+
+    &:hover {
+        background-color: #0056b3;
+    }
 }
 
 #log {
@@ -29,4 +44,29 @@ button {
     border: 1px solid #ccc;
     max-height: 300px;
     overflow-y: auto;
+}
+
+.spinner {
+    display: none;
+    margin: 1em 0;
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 24px;
+    height: 24px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+h1 {
+    color: #007bff;
 }
